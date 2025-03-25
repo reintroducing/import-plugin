@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ES2022",
+    "skipLibCheck": true,
+    // "types": ["node"],
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": false,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    // A few of these are temporarily disabled, see overrides below
+    // "strict": true,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* Aliases */
+    "baseUrl": ".",
+    "paths": {
+      "@gds/*": ["lib/gds/*"],
+      "@hooks/*": ["lib/hooks/*"],
+      "@icons/*": ["lib/icons/components/*"],
+      "@ui/*": ["lib/ui/*"],
+      "@utils/*": ["lib/utils/*"],
+      "@cypress/*": ["cypress/*"],
+      "@/*": ["src/*"]
+    },
+
+    /* Temporary Overrides */
+    // The below are temporary until we can get the codebase up to par, get it?
+    "noImplicitAny": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "strict": false
+  },
+  "include": [".storybook/**/*", "cypress", "lib", "src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
